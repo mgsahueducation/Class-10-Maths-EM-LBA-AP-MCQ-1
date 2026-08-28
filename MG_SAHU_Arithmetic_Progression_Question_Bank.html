@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MG SAHU EDUCATION BLOG - Class 10 Arithmetic Progression</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#f3f6fb;color:#172033}
+.container{max-width:800px;margin:auto;padding:16px}
+header{text-align:center;background:white;padding:20px 12px;border-radius:14px;box-shadow:0 3px 12px #0001;margin-bottom:15px}
+.brand{font-size:25px;font-weight:800;color:#0b57d0;margin-bottom:8px}
+h1{font-size:23px;margin:5px 0;color:#172033}
+.subtitle{color:#667085;margin:8px 0 0}
+.panel,.card,.notes{background:white;border-radius:14px;padding:16px;margin-bottom:15px;box-shadow:0 3px 12px #0001}
+.row{display:flex;gap:8px;align-items:center;margin-bottom:10px}
+.row label{font-weight:bold;white-space:nowrap}
+select,input{flex:1;padding:11px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:white}
+button{border:0;border-radius:8px;padding:10px 14px;font-size:15px;font-weight:bold;background:#2563eb;color:white;cursor:pointer}
+button:disabled{background:#b8c1cc}
+.green{background:#16a34a}.red{background:#dc2626}.gray{background:#475569}.orange{background:#d97706}
+.question-no{font-size:14px;color:#667085;font-weight:bold;margin-bottom:8px}
+.question{font-size:19px;font-weight:700;line-height:1.5;margin-bottom:14px}
+.options{display:grid;gap:8px;margin-bottom:18px}
+.option{padding:10px 12px;background:#f1f5f9;border-radius:8px}
+.correct{background:#dcfce7;border:1px solid #86efac;color:#166534;font-weight:bold}
+.step{display:none;border-left:4px solid #2563eb;background:#eff6ff;padding:14px;border-radius:0 9px 9px 0;margin-top:12px}
+.step.active{display:block}
+.step h3{margin:0 0 7px;color:#174ea6}
+.explain{line-height:1.6}
+.formula{background:#fff;border:1px dashed #94a3b8;border-radius:8px;padding:10px;margin-top:9px;font-family:Georgia,serif;font-size:18px}
+.answer{background:#ecfdf5;border:1px solid #86efac;padding:12px;border-radius:9px;margin-top:14px;font-weight:bold;color:#166534}
+.controls{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;margin-top:18px;border-top:1px solid #e2e8f0;padding-top:15px}
+.controls div{display:flex;gap:7px;flex-wrap:wrap}
+.notes{background:#fffbeb;border:1px solid #f5d06f}
+.notes h2{color:#92400e;margin-top:0}
+.notes li{margin-bottom:8px;line-height:1.5;color:#713f12}
+.small{font-size:13px;color:#667085}
+@media(max-width:600px){
+ .container{padding:9px}.brand{font-size:21px}h1{font-size:19px}.question{font-size:17px}
+ .row{align-items:stretch;flex-wrap:wrap}.row label{width:100%}
+ button{flex:1}.controls{flex-direction:column}.controls div{width:100%}
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+<div class="brand">MG SAHU EDUCATION BLOG</div>
+<h1>Class 10: Arithmetic Progression</h1>
+<div class="subtitle">Complete Question Bank — Questions 1 to 20</div>
+</header>
+
+<div class="panel">
+<div class="row">
+<label for="questionSelect">Select Question:</label>
+<select id="questionSelect"></select>
+</div>
+<div class="row">
+<label for="jumpInput">Go to Question #:</label>
+<input id="jumpInput" type="number" min="1" max="20" placeholder="Enter 1–20">
+<button onclick="jumpQuestion()">GO</button>
+</div>
+<div class="small">You can directly open any question using the selector or question number.</div>
+</div>
+
+<div class="card">
+<div class="question-no" id="questionNo"></div>
+<div class="question" id="questionText"></div>
+<div class="options" id="options"></div>
+<div id="steps"></div>
+<div class="answer" id="answer"></div>
+
+<div class="controls">
+<div>
+<button id="prevQ" class="gray" onclick="previousQuestion()">← Previous Question</button>
+<button id="nextQ" class="green" onclick="nextQuestion()">Next Question →</button>
+</div>
+<div>
+<button id="prevStep" class="gray" onclick="previousStep()">← Previous Step</button>
+<button id="nextStep" onclick="nextStep()">Next Step →</button>
+</div>
+</div>
+</div>
+
+<div class="notes">
+<h2>📓 Details to Note Down in Your Notebook</h2>
+<ol id="notebook"></ol>
+</div>
+
+</div>
+
+<script>
+const questions = [
+{
+id:1,
+q:"The arithmetic progression in the following is:",
+o:["A) 1, 2, 4, 8, ...","B) 3, 7, 10, 14, ...","C) 1, 4, 9, 16, ...","D) 5, 9, 13, 17, ..."],
+a:3,
+steps:[
+["Step 1: Definition of AP","An arithmetic progression is a sequence in which the difference between consecutive terms is constant.","d = second term − first term"],
+["Step 2: Check the options","For D: 9 − 5 = 4, 13 − 9 = 4, and 17 − 13 = 4.","9 − 5 = 13 − 9 = 17 − 13 = 4"],
+["Step 3: Conclusion","The common difference is constant, so D is an arithmetic progression.","Answer: D) 5, 9, 13, 17, ..."]
+],
+n:["An AP has a constant common difference.","For D, d = 4.","Complete answer: D) 5, 9, 13, 17, ..."]
+},
+{
+id:2,q:"The common difference of the arithmetic progression −7, −9, −11, −13, ... is:",
+o:["A) −7","B) −2","C) 2","D) 3"],a:1,
+steps:[
+["Step 1: Identify consecutive terms","First term = −7 and second term = −9.","a₁ = −7, a₂ = −9"],
+["Step 2: Use the formula","Common difference is d = a₂ − a₁.","d = (−9) − (−7)"],
+["Step 3: Calculate","Subtracting a negative number means adding.","d = −9 + 7 = −2"],
+["Final Answer","Therefore the correct alternative is B.","Answer: B) −2"]
+],n:["Formula: d = a₂ − a₁.","d = (−9) − (−7) = −2.","Complete answer: B) −2."]
+},
+{
+id:3,q:"The common difference of the arithmetic progression 100, 93, 86, ... is:",
+o:["A) −7","B) 7","C) 3","D) 5"],a:0,
+steps:[
+["Step 1: Identify terms","First two terms are 100 and 93.","a₁ = 100, a₂ = 93"],
+["Step 2: Apply the formula","d = a₂ − a₁.","d = 93 − 100"],
+["Step 3: Calculate","93 is 7 less than 100.","d = −7"],
+["Final Answer","The correct alternative is A.","Answer: A) −7"]
+],n:["Use d = a₂ − a₁.","d = 93 − 100 = −7.","Complete answer: A) −7."]
+},
+{
+id:4,q:"The formula to find the nth term of an arithmetic progression is:",
+o:["A) aₙ = a + (n − 1)d","B) aₙ = a + (n + 1)d","C) aₙ = a − (n − 1)d","D) aₙ = n + 143"],a:0,
+steps:[
+["Step 1: Recall the AP terms","The first terms are a, a+d, a+2d, a+3d, ...","a₁ = a, a₂ = a+d, a₃ = a+2d"],
+["Step 2: General nth term","The nth term contains (n−1) common differences.","aₙ = a + (n − 1)d"],
+["Final Answer","This matches option A.","Answer: A) aₙ = a + (n − 1)d"]
+],n:["Standard nth-term formula: aₙ = a + (n − 1)d.","Remember: number of d's before the nth term is n − 1.","Complete answer: A."]
+},
+{
+id:5,q:"If the nth term of an arithmetic progression is 5n + 3, then the 3rd term is:",
+o:["A) 11","B) 18","C) 12","D) 13"],a:1,
+steps:[
+["Step 1: Given","The nth term is 5n + 3.","aₙ = 5n + 3"],
+["Step 2: Put n = 3","For the third term, substitute n = 3.","a₃ = 5(3) + 3"],
+["Step 3: Calculate","5 × 3 = 15 and 15 + 3 = 18.","a₃ = 18"],
+["Final Answer","The correct alternative is B.","Answer: B) 18"]
+],n:["Given aₙ = 5n + 3.","Put n = 3: a₃ = 5(3) + 3 = 18.","Complete answer: B) 18."]
+},
+{
+id:6,q:"If the nth term of an arithmetic progression aₙ = 3n − 2, then the 9th term is:",
+o:["A) −25","B) 5","C) −5","D) 25"],a:3,
+steps:[
+["Step 1: Given","aₙ = 3n − 2.","aₙ = 3n − 2"],
+["Step 2: Put n = 9","For the ninth term, substitute n = 9.","a₉ = 3(9) − 2"],
+["Step 3: Calculate","3 × 9 = 27; 27 − 2 = 25.","a₉ = 25"],
+["Final Answer","The correct alternative is D.","Answer: D) 25"]
+],n:["Given aₙ = 3n − 2.","a₉ = 3(9) − 2 = 25.","Complete answer: D) 25."]
+},
+{
+id:7,q:"If the nth term of an arithmetic progression aₙ = 24 − 3n, then the 2nd term is:",
+o:["A) 18","B) 15","C) 0","D) 2"],a:0,
+steps:[
+["Step 1: Given","aₙ = 24 − 3n.","aₙ = 24 − 3n"],
+["Step 2: Put n = 2","For the second term, substitute n = 2.","a₂ = 24 − 3(2)"],
+["Step 3: Calculate","3 × 2 = 6; 24 − 6 = 18.","a₂ = 18"],
+["Final Answer","The correct alternative is A.","Answer: A) 18"]
+],n:["Given aₙ = 24 − 3n.","a₂ = 24 − 6 = 18.","Complete answer: A) 18."]
+},
+{
+id:8,q:"If the nth term of the arithmetic progression aₙ = 2n − 1, then the 4th term is:",
+o:["A) −7","B) 7","C) 5","D) 6"],a:1,
+steps:[
+["Step 1: Given","aₙ = 2n − 1.","aₙ = 2n − 1"],
+["Step 2: Put n = 4","For the fourth term, substitute n = 4.","a₄ = 2(4) − 1"],
+["Step 3: Calculate","2 × 4 = 8; 8 − 1 = 7.","a₄ = 7"],
+["Final Answer","The correct alternative is B.","Answer: B) 7"]
+],n:["Given aₙ = 2n − 1.","a₄ = 8 − 1 = 7.","Complete answer: B) 7."]
+},
+{
+id:9,q:"In an arithmetic progression, if aₙ = 3n + 4, then the (n + 1)th term is:",
+o:["A) 3","B) 3n + 1","C) 3n + 7","D) 3n + 5"],a:2,
+steps:[
+["Step 1: Given","aₙ = 3n + 4.","aₙ = 3n + 4"],
+["Step 2: Replace n by n + 1","To find aₙ₊₁, substitute n + 1 for n.","aₙ₊₁ = 3(n + 1) + 4"],
+["Step 3: Simplify","3(n + 1) = 3n + 3.","aₙ₊₁ = 3n + 3 + 4 = 3n + 7"],
+["Final Answer","The correct alternative is C.","Answer: C) 3n + 7"]
+],n:["Replace n by n + 1.","3(n + 1) + 4 = 3n + 7.","Complete answer: C) 3n + 7."]
+},
+{
+id:10,q:"In an arithmetic progression, if aₙ = 2n + 1, then the common difference is:",
+o:["A) 0","B) 1","C) 2","D) 3"],a:2,
+steps:[
+["Step 1: Find the first term","Put n = 1.","a₁ = 2(1) + 1 = 3"],
+["Step 2: Find the second term","Put n = 2.","a₂ = 2(2) + 1 = 5"],
+["Step 3: Find d","d = a₂ − a₁.","d = 5 − 3 = 2"],
+["Final Answer","The correct alternative is C.","Answer: C) 2"]
+],n:["a₁ = 3 and a₂ = 5.","d = a₂ − a₁ = 5 − 3 = 2.","Complete answer: C) 2."]
+},
+{
+id:11,q:"If 6, x, 14 are in arithmetic progression, then the value of x is:",
+o:["A) 10","B) 20","C) 18","D) 12"],a:0,
+steps:[
+["Step 1: Use the middle-term property","If a, b, c are consecutive terms of an AP, then 2b = a + c.","2x = 6 + 14"],
+["Step 2: Add","6 + 14 = 20.","2x = 20"],
+["Step 3: Divide by 2","x = 20 ÷ 2.","x = 10"],
+["Final Answer","The correct alternative is A.","Answer: A) 10"]
+],n:["Middle-term property: 2x = first term + third term.","2x = 6 + 14 = 20, so x = 10.","Complete answer: A) 10."]
+},
+{
+id:12,q:"In an arithmetic progression, if a = 12, d = 4 and aₙ = 76, then n = ?",
+o:["A) 17","B) 18","C) 16","D) 19"],a:3,
+steps:[
+["Step 1: Use nth-term formula","aₙ = a + (n − 1)d.","76 = 12 + (n − 1)4"],
+["Step 2: Transpose 12","76 − 12 = 4(n − 1).","64 = 4(n − 1)"],
+["Step 3: Divide by 4","64 ÷ 4 = n − 1.","16 = n − 1"],
+["Step 4: Find n","Add 1 to both sides.","n = 17"],
+["Correction check","The calculated value is 17, not 19. Therefore the correct alternative is A.","Answer: A) 17"]
+],n:["Use aₙ = a + (n − 1)d.","76 = 12 + 4(n − 1).","64 = 4(n − 1), so n − 1 = 16 and n = 17.","Complete answer: A) 17."]
+},
+{
+id:13,q:"In an arithmetic progression, if a = −7, d = 5, then a₁₂ = ?",
+o:["A) 48","B) 45","C) 46","D) 42"],a:0,
+steps:[
+["Step 1: Formula","aₙ = a + (n − 1)d.","a₁₂ = −7 + (12 − 1)(5)"],
+["Step 2: Simplify","12 − 1 = 11.","a₁₂ = −7 + 11(5)"],
+["Step 3: Calculate","11 × 5 = 55; −7 + 55 = 48.","a₁₂ = 48"],
+["Final Answer","The correct alternative is A.","Answer: A) 48"]
+],n:["a₁₂ = a + 11d.","a₁₂ = −7 + 11(5) = 48.","Complete answer: A) 48."]
+},
+{
+id:14,q:"If the first term of an arithmetic progression is m and the common difference is 3, then the 10th term is:",
+o:["A) m + 25","B) m + 12","C) m + 30","D) m + 27"],a:3,
+steps:[
+["Step 1: Given","First term a = m, common difference d = 3 and n = 10.","a = m, d = 3, n = 10"],
+["Step 2: Apply formula","a₁₀ = a + (10 − 1)d.","a₁₀ = m + 9(3)"],
+["Step 3: Calculate","9 × 3 = 27.","a₁₀ = m + 27"],
+["Final Answer","The correct alternative is D.","Answer: D) m + 27"]
+],n:["a₁₀ = a + 9d.","a₁₀ = m + 9(3) = m + 27.","Complete answer: D) m + 27."]
+},
+{
+id:15,q:"If (2p + 1), 13, (5p − 3) are three consecutive terms of an arithmetic progression, then p is:",
+o:["A) 4","B) −4","C) 2","D) 3"],a:0,
+steps:[
+["Step 1: Use middle-term property","Twice the middle term equals the sum of the other two terms.","2(13) = (2p + 1) + (5p − 3)"],
+["Step 2: Simplify","Left side is 26. Right side is 7p − 2.","26 = 7p − 2"],
+["Step 3: Solve","Add 2 to both sides.","28 = 7p"],
+["Step 4: Calculate p","Divide by 7.","p = 4"],
+["Final Answer","The correct alternative is A.","Answer: A) 4"]
+],n:["For three consecutive AP terms, 2 × middle = first + third.","26 = 2p + 1 + 5p − 3 = 7p − 2.","28 = 7p, so p = 4.","Complete answer: A) 4."]
+},
+{
+id:16,q:"If 4, x₁, x₂, 22, 28 are in arithmetic progression, then x₁ and x₂ respectively are:",
+o:["A) 10, 16","B) 16, 10","C) 16, 22","D) 22, 16"],a:0,
+steps:[
+["Step 1: Find common difference","There are 5 terms. From first term 4 to fourth term 22 there are 3 equal differences.","22 − 4 = 18"],
+["Step 2: Divide by number of gaps","There are 3 gaps between 4 and 22.","d = 18 ÷ 3 = 6"],
+["Step 3: Find x₁","x₁ is the second term.","x₁ = 4 + 6 = 10"],
+["Step 4: Find x₂","x₂ is the third term.","x₂ = 10 + 6 = 16"],
+["Final Answer","The correct alternative is A.","Answer: A) 10, 16"]
+],n:["There are 3 equal gaps from 4 to 22.","d = (22 − 4)/3 = 6.","x₁ = 10 and x₂ = 16.","Complete answer: A) 10, 16."]
+},
+{
+id:17,q:"There are 20 terms in an arithmetic progression. If the first term is 2 and the last term is 78, then the arithmetic progression is:",
+o:["A) 2, 5, 8, ...","B) 2, 7, 12, ...","C) 2, 6, 10, ...","D) 2, 4, 6, ..."],a:1,
+steps:[
+["Step 1: Given","Number of terms n = 20, first term a = 2 and last term l = 78.","a = 2, l = 78, n = 20"],
+["Step 2: Use nth-term formula","78 = 2 + (20 − 1)d.","78 = 2 + 19d"],
+["Step 3: Find d","76 = 19d, so d = 4.","d = 4"],
+["Step 4: Identify the AP","Starting from 2 and adding 4 gives 2, 6, 10, 14, ...","AP = 2, 6, 10, 14, ..."],
+["Final Answer","The correct alternative is C.","Answer: C) 2, 6, 10, ..."]
+],n:["Use l = a + (n − 1)d.","78 = 2 + 19d, so d = 4.","AP: 2, 6, 10, 14, ...","Complete answer: C) 2, 6, 10, ..."]
+},
+{
+id:18,q:"The nth term of the arithmetic progression 3, 7, 11, 15, ... is:",
+o:["A) aₙ = 4n − 1","B) aₙ = 3n − 4","C) aₙ = 4n − 7","D) aₙ = 4n + 1"],a:0,
+steps:[
+["Step 1: Identify a and d","First term a = 3 and common difference d = 4.","a = 3, d = 4"],
+["Step 2: Use nth-term formula","aₙ = a + (n − 1)d.","aₙ = 3 + (n − 1)4"],
+["Step 3: Simplify","3 + 4n − 4 = 4n − 1.","aₙ = 4n − 1"],
+["Final Answer","The correct alternative is A.","Answer: A) aₙ = 4n − 1"]
+],n:["a = 3 and d = 4.","aₙ = 3 + (n − 1)4 = 4n − 1.","Complete answer: A) aₙ = 4n − 1."]
+},
+{
+id:19,q:"The formula to find the sum of all terms of an arithmetic progression with first term a and last term l is:",
+o:["A) Sₙ = n/2 (a + l)","B) Sₙ = n/2 (a − l)","C) Sₙ = n(a + l)","D) Sₙ = 2/n (a + l)"],a:0,
+steps:[
+["Step 1: Recall the sum formula","For an AP with n terms, first term a and last term l, the sum is half the number of terms multiplied by the sum of first and last terms.","Sₙ = n/2 (a + l)"],
+["Step 2: Understand the formula","The factor n/2 represents the number of pairs when first and last terms are paired.","Sₙ = n/2 × (a + l)"],
+["Final Answer","The correct alternative is A.","Answer: A) Sₙ = n/2 (a + l)"]
+],n:["Important AP sum formula: Sₙ = n/2(a + l).","Here n = number of terms, a = first term, l = last term.","Complete answer: A."]
+},
+{
+id:20,q:"If aₙ, Sₙ and Sₙ₋₁ represent the nth term, sum of the first n terms and sum of the first (n − 1) terms, the correct relation is:",
+o:["A) Sₙ₋₁ = aₙ + Sₙ","B) aₙ = Sₙ − Sₙ₋₁","C) Sₙ = Sₙ₋₁ − aₙ","D) Sₙ = aₙ − Sₙ₋₁"],a:1,
+steps:[
+["Step 1: Understand Sₙ","Sₙ is the sum of the first n terms.","Sₙ = a₁ + a₂ + ... + aₙ"],
+["Step 2: Understand Sₙ₋₁","Sₙ₋₁ is the sum of only the first n − 1 terms.","Sₙ₋₁ = a₁ + a₂ + ... + aₙ₋₁"],
+["Step 3: Subtract","Subtracting the two sums leaves only the nth term.","Sₙ − Sₙ₋₁ = aₙ"],
+["Step 4: Rearrange","Therefore, aₙ = Sₙ − Sₙ₋₁.","aₙ = Sₙ − Sₙ₋₁"],
+["Final Answer","The correct alternative is B.","Answer: B) aₙ = Sₙ − Sₙ₋₁"]
+],n:["Key relation: aₙ = Sₙ − Sₙ₋₁.","Reason: Sₙ contains one extra term, namely aₙ.","Complete answer: B) aₙ = Sₙ − Sₙ₋₁."]
+}
+];
+
+let current=0, step=0;
+
+const select=document.getElementById("questionSelect");
+questions.forEach((x,i)=>{
+ let opt=document.createElement("option");
+ opt.value=i; opt.textContent="Question "+x.id;
+ select.appendChild(opt);
+});
+
+function render(){
+ const x=questions[current];
+ document.getElementById("questionNo").textContent="QUESTION "+x.id+" OF "+questions.length;
+ document.getElementById("questionText").textContent=x.q;
+ select.value=current;
+ document.getElementById("jumpInput").value=x.id;
+
+ const op=document.getElementById("options");
+ op.innerHTML="";
+ x.o.forEach((v,i)=>{
+   const d=document.createElement("div");
+   d.className="option"+(i===x.a?" correct":"");
+   d.textContent=v+(i===x.a?"  ✓":"");
+   op.appendChild(d);
+ });
+
+ const st=document.getElementById("steps");
+ st.innerHTML="";
+ x.steps.forEach((s,i)=>{
+   const d=document.createElement("div");
+   d.className="step"+(i===step?" active":"");
+   d.innerHTML="<h3>"+s[0]+"</h3><div class='explain'>"+s[1]+"</div><div class='formula'>"+s[2]+"</div>";
+   st.appendChild(d);
+ });
+
+ document.getElementById("answer").textContent="Correct Answer: "+x.o[x.a];
+ document.getElementById("notebook").innerHTML="";
+ x.n.forEach(t=>{
+   const li=document.createElement("li"); li.textContent=t;
+   document.getElementById("notebook").appendChild(li);
+ });
+
+ document.getElementById("prevQ").disabled=current===0;
+ document.getElementById("nextQ").disabled=current===questions.length-1;
+ document.getElementById("prevStep").disabled=step===0;
+ document.getElementById("nextStep").disabled=step===x.steps.length-1;
+}
+
+function nextStep(){
+ if(step<questions[current].steps.length-1){step++;render();}
+}
+function previousStep(){
+ if(step>0){step--;render();}
+}
+function nextQuestion(){
+ if(current<questions.length-1){current++;step=0;render();window.scrollTo({top:0,behavior:"smooth"});}
+}
+function previousQuestion(){
+ if(current>0){current--;step=0;render();window.scrollTo({top:0,behavior:"smooth"});}
+}
+function jumpQuestion(){
+ const n=parseInt(document.getElementById("jumpInput").value);
+ if(n>=1 && n<=questions.length){current=n-1;step=0;render();window.scrollTo({top:0,behavior:"smooth"});}
+ else alert("Please enter a question number from 1 to "+questions.length+".");
+}
+function loadFromSelect(){
+ current=parseInt(select.value);step=0;render();window.scrollTo({top:0,behavior:"smooth"});
+}
+select.addEventListener("change",loadFromSelect);
+document.getElementById("jumpInput").addEventListener("keydown",e=>{
+ if(e.key==="Enter") jumpQuestion();
+});
+
+render();
+</script>
+</body>
+</html>
