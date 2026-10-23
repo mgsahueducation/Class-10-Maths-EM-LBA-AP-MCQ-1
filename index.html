@@ -1,511 +1,166 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>MG SAHU EDUCATION BLOG | Home</title><meta name="description" content="MG SAHU EDUCATION BLOG – Mathematics, Science, LBA, KSEAB model papers, quizzes and educational resources for students."><meta name="author" content="MG SAHU EDUCATION BLOG"><link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu&family=Noto+Sans+Kannada:wght@400;500;600;700&display=swap" rel="stylesheet"><style>
-
-*{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
-}
-
-html{
-    scroll-behavior:smooth;
-}
-
-body{
-    font-family:Arial,"Noto Sans",sans-serif;
-    background:#f4f7fb;
-    color:#1f2937;
-    line-height:1.6;
-}
-
-/* HEADER */
-
-header{
-    background:linear-gradient(135deg,#123c69,#2563eb);
-    color:white;
-    text-align:center;
-    padding:42px 15px 35px;
-}
-
-header h1{
-    font-size:clamp(1.8rem,6vw,3rem);
-    margin-bottom:8px;
-}
-
-header p{
-    font-size:1.05rem;
-}
-
-/* NAVIGATION */
-
-nav{
-    position:sticky;
-    top:0;
-    z-index:1000;
-    background:white;
-    box-shadow:0 3px 12px rgba(0,0,0,.12);
-    overflow-x:auto;
-    white-space:nowrap;
-}
-
-.nav-inner{
-    max-width:1150px;
-    margin:auto;
-    display:flex;
-    justify-content:center;
-}
-
-nav a{
-    display:inline-block;
-    padding:14px 15px;
-    text-decoration:none;
-    color:#123c69;
-    font-weight:bold;
-    font-size:.9rem;
-}
-
-nav a:hover{
-    background:#eff6ff;
-    color:#2563eb;
-}
-
-/* MAIN */
-
-.container{
-    max-width:1150px;
-    margin:auto;
-    padding:20px 15px 55px;
-}
-
-/* INTRO */
-
-.intro{
-    background:white;
-    border-radius:20px;
-    padding:28px 20px;
-    margin:20px 0 25px;
-    text-align:center;
-    box-shadow:0 5px 18px rgba(0,0,0,.08);
-}
-
-.intro h2{
-    color:#123c69;
-    margin-bottom:8px;
-}
-
-/* SEARCH */
-
-.search{
-    max-width:700px;
-    margin:0 auto 30px;
-}
-
-.search input{
-    width:100%;
-    padding:15px 20px;
-    border:1px solid #d1d5db;
-    border-radius:35px;
-    font-size:16px;
-    outline:none;
-    background:white;
-}
-
-.search input:focus{
-    border-color:#2563eb;
-    box-shadow:0 0 0 3px rgba(37,99,235,.12);
-}
-
-/* SECTIONS */
-
-.section{
-    margin-top:38px;
-    scroll-margin-top:70px;
-}
-
-.section-title{
-    text-align:center;
-    color:#123c69;
-    font-size:1.7rem;
-    margin-bottom:20px;
-}
-
-/* GRID */
-
-.grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(270px,1fr));
-    gap:18px;
-}
-
-/* CARD */
-
-.card{
-    background:white;
-    border-radius:17px;
-    padding:21px;
-    border:1px solid #e5e7eb;
-    box-shadow:0 4px 15px rgba(0,0,0,.07);
-    transition:.2s;
-}
-
-.card:hover{
-    transform:translateY(-4px);
-    box-shadow:0 9px 22px rgba(0,0,0,.12);
-}
-
-.card h3{
-    color:#1d4ed8;
-    margin-bottom:9px;
-}
-
-.card p{
-    color:#4b5563;
-    margin-bottom:15px;
-    font-size:.94rem;
-}
-
-/* REPOSITORY */
-
-.repo{
-    margin:9px 0;
-}
-
-.repo a{
-    display:block;
-    padding:11px 13px;
-    background:#f8fafc;
-    border-left:4px solid #2563eb;
-    border-radius:8px;
-    color:#1d4ed8;
-    text-decoration:none;
-    font-weight:600;
-    font-size:.9rem;
-}
-
-.repo a:hover{
-    background:#eff6ff;
-}
-
-/* BUTTON */
-
-.btn{
-    display:inline-block;
-    background:#2563eb;
-    color:white;
-    padding:10px 15px;
-    border-radius:9px;
-    text-decoration:none;
-    font-weight:bold;
-    margin-top:8px;
-}
-
-.btn:hover{
-    background:#1e40af;
-}
-
-/* URDU */
-
-.urdu{
-    font-family:"Noto Nastaliq Urdu",serif;
-    direction:rtl;
-    text-align:right;
-}
-
-/* KANNADA */
-
-.kannada{
-    font-family:"Noto Sans Kannada",sans-serif;
-}
-
-/* MEDIUM BUTTONS */
-
-.medium{
-    text-align:center;
-}
-
-.medium a{
-    display:inline-block;
-    background:white;
-    color:#123c69;
-    padding:12px 18px;
-    margin:5px;
-    border-radius:28px;
-    text-decoration:none;
-    font-weight:bold;
-    box-shadow:0 3px 10px rgba(0,0,0,.08);
-}
-
-.medium a:hover{
-    background:#eff6ff;
-}
-
-/* ALL PROJECTS */
-
-.all-projects{
-    text-align:center;
-}
-
-/* FOOTER */
-
-footer{
-    background:#111827;
-    color:white;
-    text-align:center;
-    padding:30px 15px;
-}
-
-footer a{
-    color:#93c5fd;
-    text-decoration:none;
-}
-
-/* SEARCH HIDDEN */
-
-.hidden{
-    display:none!important;
-}
-
-/* MOBILE */
-
-@media(max-width:650px){
-
-    header{
-        padding:35px 13px;
-    }
-
-    nav a{
-        padding:12px 11px;
-        font-size:.82rem;
-    }
-
-    .container{
-        padding-left:11px;
-        padding-right:11px;
-    }
-
-    .section-title{
-        font-size:1.45rem;
-    }
-
-    .card{
-        padding:18px;
-    }
-
-}
-
-</style></head><body><!-- HEADER --><header><h1>📚 MG SAHU EDUCATION BLOG</h1><p>Learn • Practice • Solve • Succeed</p></header><!-- NAVIGATION --><nav><div class="nav-inner"><a href="#home">🏠 Home</a>
-
-<a href="#mathematics">📐 Mathematics</a>
-
-<a href="#lba">🎯 LBA</a>
-
-<a href="#kseab">📝 KSEAB</a>
-
-<a href="#science">🧪 Science</a>
-
-<a href="#quizzes">🎮 Quizzes</a>
-
-<a href="#all-projects">📚 All Projects</a>
-
-</div></nav><main class="container"><!-- HOME --><section id="home" class="intro"><h2>Welcome to MG SAHU EDUCATION BLOG</h2><p>
-Explore Mathematics, Science, LBA resources,
-interactive quizzes, model question papers
-and educational resources.
-</p></section><!-- SEARCH --><div class="search"><input
-type="search"
-id="searchBox"
-placeholder="🔍 Search your educational resources..."
-onkeyup="searchResources()">
-
-</div><!-- ==================================================
-     MATHEMATICS
-================================================== --><section id="mathematics" class="section"><h2 class="section-title">📐 Class 10 Mathematics</h2><div class="grid"><!-- ENGLISH --><div class="card searchable"><h3>🇬🇧 English Medium</h3><p>
-Class 10 Mathematics resources and LBA materials.
-</p><div class="repo">
-<a href="https://github.com/mgsahueducation/Quiz-class-10-Maths-em-Real-Numbers-/" target="_blank">
-🔢 Real Numbers – Quiz
-</a>
-</div><div class="repo">
-<a href="https://github.com/mgsahueducation/Class-10-Maths-EM-LBA-AP-MCQ-1/" target="_blank">
-🎯 Arithmetic Progression – MCQ
-</a>
-</div><div class="repo">
-<a href="https://github.com/mgsahueducation/Class-10-Maths-EM-LBA-AP-Next-/" target="_blank">
-📚 Arithmetic Progression – LBA
-</a>
-</div><div class="repo">
-<a href="https://github.com/mgsahueducation/Class-10-Maths.-EM-LBA-Arithmetic-progression-2m-questions-/7" target="_blank">
-📝 Arithmetic Progression – 2 Marks
-</a>
-</div><div class="repo">
-<a href="https://github.com/mgsahueducation/Class-10-Maths-Arithmetic-progression-LBA-2-marks-work-sheet-/" target="_blank">
-📄 Arithmetic Progression – Worksheet
-</a>
-</div></div><!-- URDU --><div class="card searchable urdu"><h3>اردو</h3><p>
-کلاس دہم ریاضی کے اردو میڈیم تعلیمی وسائل۔
-</p><div class="repo">
-<a href="https://github.com/mgsahueducation/Class-10-Urdu-Maths-" target="_blank">
-📐 Class 10 Urdu Mathematics
-</a>
-</div><div class="repo">
-<a href="https://github.com/mgsahueducation/Class-10-Urdu-Maths-FA-2-Test/" target="_blank">
-📝 FA-2 Test
-</a>
-</div><div class="repo">
-<a href="https://github.com/mgsahueducation/Class-10-Urdu-Maths-LBA-Arithmetic-progression-2m-questions-/" target="_blank">
-📚 حسابی تصاعد – 2 Marks
-</a>
-</div><div class="repo">
-<a href="https://github.com/mgsahueducation/f/" target="_blank">
-📝 حسابی تصاعد – 1 Mark
-</a>
-</div><div class="repo">
-<a href="https://github.com/mgsahueducation/Mathematics-Urdu-Medium-Arithmetic-Progression--MCQ-1" target="_blank">
-🎯 حسابی تصاعد – MCQ
-</a>
-</div></div><!-- KANNADA --><div class="card searchable kannada"><h3>ಕನ್ನಡ</h3><p>
-10ನೇ ತರಗತಿ ಗಣಿತ – ಕನ್ನಡ ಮಾಧ್ಯಮ ಸಂಪನ್ಮೂಲಗಳು.
-</p><div class="repo">
-<a href="https://github.com/mgsahueducation/Mathematics-Kannada-Medium-" target="_blank">
-📐 Mathematics – Kannada Medium
-</a>
-</div><div class="repo">
-<a href="https://github.com/mgsahueducation/" target="_blank">
-📝 Arithmetic Progression – 3 Marks
-</a>
-</div></div></div></section><!-- ==================================================
-     LBA
-================================================== --><section id="lba" class="section"><h2 class="section-title">🎯 LBA Mathematics</h2><div class="grid"><div class="card searchable"><h3>📚 Learning Based Assessment</h3><p>
-Class 10 Mathematics LBA resources.
-</p><div class="repo">
-<a href="https://github.com/mgsahueducation/Class-10-Maths-EM-LBA-AP-MCQ-1/" target="_blank">
-🎯 MCQ – English Medium
-</a>
-</div><div class="repo">
-<a href="https://github.com/mgsahueducation//" target="_blank">
-📚 LBA – English Medium
-</a>
-</div><div class="repo">
-<a href="https://github.com/mgsahueducation/Class-10-Maths.-EM-LBA-Arithmetic-progression-2m-questions-/7" target="_blank">
-📝 2 Mark Questions – English
-</a>
-</div><div class="repo">
-<a href="https://github.com/mgsahueducation/Class-10-Urdu-Maths-LBA-Arithmetic-progression-2m-questions-/" target="_blank">
-📝 2 Mark Questions – Urdu
-</a>
-</div><div class="repo">
-<a href="https://github.com/mgsahueducation/Class-10-Maths-KM-LBA-AP-3-MARKS-QUESTION-/" target="_blank">
-📝 3 Mark Questions – Kannada
-</a>
-</div><div class="repo">
-<a href="https://github.com/mgsahueducation/Class-10-Maths-Arithmetic-progression-LBA-2-marks-work-sheet-/" target="_blank">
-📄 Arithmetic Progression Worksheet
-</a>
-</div></div></div></section><!-- ==================================================
-     KSEAB
-================================================== --><section id="kseab" class="section"><h2 class="section-title">📝 KSEAB Model Question Papers</h2><div class="grid"><div class="card searchable"><h3>🇬🇧 English Medium</h3><div class="repo">
-<a href="https://github.com/mgsahueducation/KSEAB-CLASS-10-MATHS-EM-MQP-1-2026-27-answers-key/" target="_blank">
-📄 MQP 1 – Answer Key
-</a>
-</div><div class="repo">
-<a href="https://github.com/mgsahueducation/KSEAB-CLASS-10-MATHS-EM-MQP-4-2026-27-answers-key/" target="_blank">
-📄 MQP 4 – Answer Key
-</a>
-</div></div><div class="card searchable kannada"><h3>ಕನ್ನಡ Kannada Medium</h3><div class="repo">
-<a href="https://github.com/mgsahueducation/KSEAB-CLASS-10-MATHS-KM-MQP-1-2026-27-answers-key/" target="_blank">
-📄 MQP 1 – Answer Key
-</a>
-</div><div class="repo">
-<a href="https://github.com/mgsahueducation/KSEAB-CLASS-10-MATHS-KM-MQP-1-2026-27-answers-key/." target="_blank">
-📄 MQP 1 – Answer Key (.)
-</a>
-</div></div></div></section><!-- ==================================================
-     SCIENCE
-================================================== --><section id="science" class="section"><h2 class="section-title">🧪 Class 8 Science</h2><div class="grid"><div class="card searchable"><h3>🦠 Microorganisms</h3><p>
-Activity-based Science learning resources.
-</p><div class="repo">
-<a href="https://github.com/mgsahueducation/Class-8-science-em-microorganisms-activity-" target="_blank">
-🧪 Microorganisms Activity
-</a>
-</div><div class="repo">
-<a href="https://github.com/mgsahueducation/Class-8-science-em-microorganisms-activity-methods-of-food-preservation." target="_blank">
-🥫 Methods of Food Preservation
-</a>
-</div><div class="repo">
-<a href="https://github.com/mgsahueducation/Class-8-science-em-microorganisms-activity-on-biogas." target="_blank">
-🔥 Activity on Biogas
-</a>
-</div></div></div></section><!-- ==================================================
-     FORMULA
-================================================== --><section class="section"><h2 class="section-title">🔢 Mathematics Formula</h2><div class="grid"><div class="card searchable"><h3>Arithmetic Progression</h3><p>
-Formula for finding the nth term of an arithmetic progression.
-</p><div class="repo"><a href="https://github.com/mgsahueducation/Arithmetic-progression-nth-term-formula-" target="_blank">
-🔢 Open Formula Resource
-</a></div></div></div></section><!-- ==================================================
-     QUIZZES
-================================================== --><section id="quizzes" class="section"><h2 class="section-title">🎮 Interactive Quizzes</h2><div class="grid"><div class="card searchable"><h3>🎯 Class 10 Mathematics Quiz</h3><p>
-Interactive Mathematics quizzes and MCQ practice.
-</p><div class="repo"><a href="https://github.com/mgsahueducation/Quiz-class-10-Maths-em-Real-Numbers-/" target="_blank">
-🔢 Real Numbers Quiz
-</a></div><div class="repo"><a href="https://github.com/mgsahueducation/Class-10-Maths-EM-LBA-AP-MCQ-1/" target="_blank">
-🎯 Arithmetic Progression MCQ
-</a></div><div class="repo"><a href="https://github.com/mgsahueducation/Mathematics-Urdu-Medium-Arithmetic-Progression--MCQ-1" target="_blank">
-اردو Arithmetic Progression MCQ
-</a></div></div></div></section><!-- ==================================================
-     ALL PROJECTS
-================================================== --><section id="all-projects" class="section"><h2 class="section-title">📚 All My Projects</h2><div class="intro all-projects"><p>
-Explore all <strong>21 repositories</strong> of
-<strong>MG SAHU EDUCATION BLOG</strong>.
-</p><a class="btn"
-href="https://github.com/mgsahueducation?tab=repositories"
-target="_blank">
-
-🔗 View All 21 Repositories
-
-</a></div></section><!-- ==================================================
-     MEDIUM
-================================================== --><section class="section"><h2 class="section-title">🌐 Choose Your Medium</h2><div class="medium"><a href="#mathematics">
-🇬🇧 English Medium
-</a><a href="#mathematics">
-اردو Urdu Medium
-</a><a href="#mathematics">
-ಕನ್ನಡ Kannada Medium
-</a></div></section></main><!-- FOOTER --><footer><p><strong>📚 MG SAHU EDUCATION BLOG</strong></p><p>Learn • Practice • Solve • Succeed</p><p><a href="https://github.com/mgsahueducation" target="_blank">
-GitHub Profile
-</a></p><p>© 2026 MG SAHU EDUCATION BLOG</p></footer><script>
-
-function searchResources(){
-
-    const input =
-        document.getElementById("searchBox")
-        .value
-        .toLowerCase()
-        .trim();
-
-    const cards =
-        document.querySelectorAll(".searchable");
-
-    cards.forEach(function(card){
-
-        const text =
-            card.innerText.toLowerCase();
-
-        if(text.includes(input)){
-
-            card.classList.remove("hidden");
-
-        }else{
-
-            card.classList.add("hidden");
-
-        }
-
-    });
-
-}
-
-</script></body>
-                     </html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Real Numbers: Interactive Poster</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,800&family=Nunito+Sans:wght@400;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--f:'Nunito Sans',system-ui,sans-serif;--lh:1.55;--hl:1.15;--mf:Fraunces,Georgia,serif;--paper:#f4f6f1;--grid:#dfe5db;--ink:#14213d;--soft:#4a5673;--gold:#f2a900;--teal:#12877a;--coral:#e4572e;--card:#fff}
+@media (prefers-color-scheme:dark){:root{--paper:#0f1a2e;--grid:#1a2742;--ink:#f1f4ee;--soft:#a9b4cc;--card:#17243d}}
+*{box-sizing:border-box;margin:0}
+html,body{height:100%}
+body{font-family:var(--f);line-height:var(--lh);color:var(--ink);background:var(--paper);padding-bottom:64px;
+background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:32px 32px;overflow-x:hidden}
+nav{display:flex;gap:8px;align-items:center;padding:12px 20px;flex-wrap:wrap}
+nav button,.ctl button{font:inherit;font-size:1rem;font-weight:700;border:2px solid var(--ink);background:var(--card);color:var(--ink);padding:2px 14px;border-radius:10px;cursor:pointer}
+nav button.on{background:var(--ink);color:var(--paper)}
+button:focus-visible,input:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.poster{display:none;min-height:calc(100vh - 130px);padding:10px 28px 40px;grid-template-columns:minmax(260px,5fr) 7fr;gap:36px;align-items:start}
+.poster.on{display:grid}
+h1{font-weight:800;font-size:clamp(1.8rem,4.2vw,3.2rem);line-height:var(--hl);margin-bottom:6px}
+.tag{font-size:clamp(1.1rem,2vw,1.5rem);color:var(--teal);margin-bottom:18px}
+.facts{list-style:none;padding:0;display:grid;gap:10px}
+.facts li{background:var(--card);border-inline-start:6px solid var(--gold);padding:6px 16px;border-radius:12px 4px 4px 12px;font-size:1.08rem}
+[dir=ltr] .facts li{border-radius:4px 12px 12px 4px}
+.ctl{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:16px}
+.ctl label{display:flex;gap:6px;align-items:center;direction:ltr;font-weight:700}
+.ctl input{width:92px;font:inherit;font-weight:700;padding:3px 9px;border:2px solid var(--ink);border-radius:10px;background:var(--card);color:var(--ink);direction:ltr}
+.ctl .go{background:var(--gold);color:#14213d}
+.stage{display:grid;gap:12px}
+.stage>div{background:var(--card);border:2px solid var(--ink);border-radius:14px;padding:8px 20px;font-size:clamp(1.1rem,2vw,1.4rem);opacity:0;transform:translateY(14px) scale(.98);transition:opacity .5s,transform .5s;pointer-events:none}
+.stage>div.on{opacity:1;transform:none;pointer-events:auto}
+.stage>div.key{background:var(--gold);color:#14213d;font-weight:700;border-color:#14213d}
+.stage>div.result{background:var(--ink);color:var(--paper);font-weight:800;font-size:clamp(1.25rem,2.8vw,1.9rem)}
+.stage>div.result b{color:var(--gold)}
+.stage>div.bad{background:var(--coral);color:#fff}
+.m{direction:ltr;unicode-bidi:isolate;display:inline-block;font-family:var(--mf);font-weight:800;line-height:1.5}
+b.hl{color:var(--coral)}b.zero{color:var(--teal);background:rgba(18,135,122,.15);padding:0 6px;border-radius:6px}
+.chip{display:inline-block;direction:ltr;unicode-bidi:isolate;background:var(--gold);color:#14213d;font-family:var(--mf);font-weight:800;border-radius:8px;padding:0 10px;margin:0 2px;line-height:1.6}
+small.hint{display:block;color:var(--soft);padding:0 28px 20px}
+.brand{position:fixed;left:0;right:0;bottom:0;z-index:9;text-align:center;direction:ltr;padding:12px;background:var(--ink);color:var(--paper);font-family:var(--mf);font-weight:800;font-size:clamp(1rem,2.4vw,1.4rem);border-top:4px solid var(--gold);line-height:1.5}
+body.clean nav,body.clean .ctl,body.clean small.hint{display:none}
+body.clean .poster{min-height:100vh;padding-top:30px}
+@media(max-width:820px){.poster.on{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation-duration:.01s!important}}
+</style>
+</head>
+<body>
+<nav id="nav"></nav>
+<main id="main"></main>
+<small class="hint">Keys: ← → switch poster · Space replay · S step · H hide controls (clean screen for recording)</small>
+<div class="brand">MG Sahoo Education Blog</div>
+<script>
+const $=(s,r=document)=>r.querySelector(s);
+const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+const M=h=>`<span class="m">${h}</span>`;
+function factor(n){const m={};for(let p=2;p*p<=n;p++)while(n%p==0){m[p]=(m[p]||0)+1;n/=p}if(n>1)m[n]=(m[n]||0)+1;return m}
+function fmt(m){const k=Object.keys(m).map(Number).sort((a,b)=>a-b);return k.length?k.map(p=>p+(m[p]>1?'<sup>'+m[p]+'</sup>':'')).join(' × '):'1'}
+const val=m=>Object.keys(m).reduce((t,p)=>t*Math.pow(+p,m[p]),1);
+const isPrime=n=>{if(n<2)return false;const f=factor(n);return Object.keys(f).length==1&&f[n]==1};
+const okInt=(x,lo,hi)=>Number.isInteger(x)&&x>=lo&&x<=hi;
+function hl(nums){const F=nums.map(factor),H={},L={};
+ new Set(F.flatMap(f=>Object.keys(f))).forEach(p=>{const es=F.map(f=>f[p]||0);L[p]=Math.max(...es);const mn=Math.min(...es);if(mn>0)H[p]=mn});
+ return{F,H,L,h:val(H),l:val(L)}}
+const chip=(n,f)=>`${M(n+' =')} <span class="chip">${fmt(f)}</span>`;
+const hv=(T,R)=>`${T.s.hcfL}<br>${M(`= <b class="zero">${fmt(R.H)}</b> = <b>${R.h}</b>`)}`;
+const lv=(T,R)=>`${T.s.lcmL}<br>${M(`= <b class="zero">${fmt(R.L)}</b> = <b>${R.l}</b>`)}`;
+const res=(T,R)=>`§${T.hcf} ${M('= '+R.h)} · ${T.lcm} ${M('= '+R.l)}`;
+
+const T={keyLabel:'Important point:',run:'Run',step:'Step',reset:'Reset',hcf:'HCF',lcm:'LCM',
+s:{err4:'Enter a whole number from 4 to 10,000,000.',prime:n=>`${n} is prime. Enter a composite number.`,
+tree:'Draw the factor tree: divide by the smallest prime each time.',primes:'Prime factors:',unique:'This factorisation is unique, apart from the order of the primes.',
+err2:'Enter whole numbers from 2 to 1,000,000.',err3:'Enter whole numbers from 2 to 10,000.',
+hcfL:'HCF: smallest power of each common prime',lcmL:'LCM: greatest power of each prime involved',chk:'Check:',viaH:'Using the HCF:',
+prodNot:'Notice: the product of the three numbers is not equal to HCF × LCM.',prodEq:'Here they happen to be equal, but this is not true in general.',
+zeroIdea:'A number ending in 0 is divisible by 10 = 2 × 5, so both 2 and 5 must be prime factors.',onlyP:'The only primes in the factorisation are:',uniq:'By uniqueness, there are no other primes.',
+can:b=>`${b}<sup>n</sup> can end with 0, because 2 and 5 are both prime factors of ${b}.`,never:(b,m)=>`The prime ${m} is missing, so ${M(b+'<sup>n</sup>')} never ends with 0.`,
+prErr:'Enter a prime number (2, 3, 5, 7, 11…).',
+irr:p=>[`<b>Step 1.</b> Assume ${M('√'+p)} is rational: ${M(`√${p} = a/b`)}, where a and b are co-prime, ${M('b ≠ 0')}.`,
+`<b>Step 2.</b> So ${M(`b√${p} = a`)}. Squaring: ${M(`${p}b<sup>2</sup> = a<sup>2</sup>`)}.`,
+`<b>Step 3.</b> ${p} divides ${M('a<sup>2</sup>')}, so by Theorem 1.2 <b class="zero">${p} divides a</b>. Write ${M(`a = ${p}c`)}.`,
+`<b>Step 4.</b> Then ${M(`${p*p}c<sup>2</sup> = ${p}b<sup>2</sup>`)}, that is ${M(`b<sup>2</sup> = ${p}c<sup>2</sup>`)}.`,
+`<b>Step 5.</b> So ${p} divides ${M('b<sup>2</sup>')}, hence <b class="zero">${p} divides b</b>.`,
+`<b>Step 6.</b> ${p} divides both a and b. <b class="hl">This contradicts the fact that a and b are co-prime.</b>`],
+irrRes:p=>`Hence ${M('√'+p)} is <b>irrational</b>.`,
+eErr:'Enter a prime c and b ≠ 0. For a minus sign use a negative b (5 − √3 means a=5, b=-1, c=3). For 3√2 use a=0.',
+e1:E=>`<b>Step 1.</b> Assume <span class="chip">${E}</span> is rational: ${M(E+' = r')}, where r is rational.`,
+e2:(bt,ra,c,bd)=>`<b>Step 2.</b> Isolate the root: ${M(`${bt} = ${ra}`)}, so <b class="zero">${M(`√${c} = (${ra}) / ${bd}`)}</b>.`,
+e3:(ra,bd,c)=>`<b>Step 3.</b> r, a and b are rational and b ≠ 0, so ${M(`(${ra}) / ${bd}`)} is rational. Hence ${M('√'+c)} is rational.`,
+e4:(E,c)=>`<b>Step 4.</b> But ${M('√'+c)} is irrational (proved earlier). <b class="hl">This contradicts our assumption that ${M(E)} is rational.</b>`,
+eRes:E=>`Hence ${M(E)} is <b>irrational</b>.`,
+m1:'They start together. They are at the starting point again after a time that is a multiple of both times, so we need the LCM.',
+meet:l=>`They meet again at the starting point after <b>${l}</b> minutes.`},
+p:[
+{name:'1 · Fundamental Theorem',title:'Fundamental Theorem of Arithmetic',tag:'Every composite number has one prime fingerprint.',
+key:'Every composite number can be expressed as a product of primes, and this factorisation is unique, apart from the order.',
+facts:['Factorise with a factor tree, and write the primes in ascending order.',`Combine equal primes into powers: ${M('32760 = 2<sup>3</sup> × 3<sup>2</sup> × 5 × 7 × 13')}`,'Once the order is fixed (ascending), the factorisation is unique.','First correct proof: Carl Friedrich Gauss, the ‘Prince of Mathematicians’.']},
+{name:'2 · HCF and LCM',title:'HCF and LCM by Prime Factorisation',tag:'Smallest powers for HCF, greatest powers for LCM.',
+key:M('HCF(a, b) × LCM(a, b) = a × b'),
+facts:['HCF = product of the smallest power of each common prime factor.','LCM = product of the greatest power of each prime factor involved.',`${M('HCF × LCM = a × b')}, so ${M('LCM = (a × b) / HCF')}.`,`Example: ${M('HCF(96, 404) = 4')}, so LCM = 9696.`]},
+{name:'3 · Three Numbers',title:'HCF and LCM of Three Numbers',tag:'Careful: the product rule does not extend to three.',
+key:'For three numbers, HCF × LCM is not equal to the product of the numbers.',
+facts:['Same method: smallest powers of common primes for HCF, greatest powers of all primes for LCM.',`Example: ${M('6 = 2 × 3, 72 = 2<sup>3</sup> × 3<sup>2</sup>, 120 = 2<sup>3</sup> × 3 × 5')}`,`${M('HCF(6, 72, 120) = 6')} and ${M('LCM = 360')}.`,`But ${M('6 × 72 × 120 ≠ HCF × LCM')}.`]},
+{name:'4 · Ends with 0?',title:'Can bⁿ End with the Digit 0?',tag:'Look for the prime 5 in the factorisation.',
+key:'If bⁿ ends with 0, it is divisible by 10 = 2 × 5, so both 2 and 5 must be prime factors of b.',
+facts:[`Example 1: ${M('4<sup>n</sup> = 2<sup>2n</sup>')}, so the only prime is 2.`,'The uniqueness in the Fundamental Theorem guarantees there are no other primes.',`So ${M('4<sup>n</sup>')} never ends with 0. Likewise ${M('6<sup>n</sup>')} (only 2 and 3).`,'Try other values of b in the box.']},
+{name:'5 · Irrational √p',title:'Irrationality of √p',tag:'A proof by contradiction, step by step.',
+key:'Theorem 1.2: if a prime p divides a², then p divides a.',
+facts:[`Prove that ${M('√2, √3, √5')} and, in general, ${M('√p')} (p prime) are irrational.`,`Assume ${M('√p = a/b')} with a, b co-prime, and use Theorem 1.2 twice.`,'Both a and b divisible by p contradicts ‘co-prime’.','Always write the contradiction statement.']},
+{name:'6 · a + b√c Type',title:'Sum, Difference and Product Types',tag:'Isolate the root. Spot the contradiction.',
+key:`To show ${M('a + b√c')} is irrational, assume it is rational, isolate ${M('√c')}, and reach a contradiction.`,
+facts:[`Examples 6 and 7: ${M('5 − √3')} and ${M('3√2')}. Exercise: ${M('3 + 2√5, 7√5, 6 + √2')}.`,`Assume ${M('a + b√c = r')} (rational).`,`Then ${M('√c = (r − a)/b')} is rational, but ${M('√c')} is irrational (proved earlier).`,`Type a = 0 for ${M('3√2')}; a = 5, b = -1, c = 3 for ${M('5 − √3')}.`]},
+{name:'7 · Meeting Problem',title:'When Will They Meet Again?',tag:'Time to meet again = LCM of the times.',
+key:'Two people start together and go round the same path: they meet again at the start after the LCM of their times.',
+facts:['Sonia takes 18 minutes per round and Ravi takes 12 minutes.','Meeting at the starting point needs a time that is a multiple of both.',`The first such time is ${M('LCM(18, 12) = 36')} minutes.`,'Change the times (t1, t2) and try again.']}
+]};
+
+const IN=[[['n',32760]],[['a',96],['b',404]],[['a',6],['b',72],['c',120]],[['b',4]],[['p',2]],[['a',5],['b',-1],['c',3]],[['t1',18],['t2',12]]];
+const BD=[
+([n])=>{if(!okInt(n,4,1e7))return['!'+T.s.err4];if(isPrime(n))return['!'+T.s.prime(n)];
+ const o=[T.s.tree],pr=[];let c=n;while(c>1){let p=2;while(c%p)p++;const r=c/p;if(r>1)o.push(M(`${c} = ${p} × ${r}`));pr.push(p);c=r}
+ o.push(T.s.primes+' '+M(pr.join(' × ')));o.push('§'+M(`${n} = ${fmt(factor(n))}`));o.push(T.s.unique);return o},
+([a,b])=>{if(![a,b].every(x=>okInt(x,2,1e6)))return['!'+T.s.err2];const R=hl([a,b]);
+ return[chip(a,R.F[0]),chip(b,R.F[1]),hv(T,R),lv(T,R),`${T.s.chk} ${M(`${R.h} × ${R.l} = ${R.h*R.l} = ${a} × ${b}`)}`,`${T.s.viaH} ${M(`${a} × ${b} / ${R.h} = ${R.l}`)}`,res(T,R)]},
+([a,b,c])=>{if(![a,b,c].every(x=>okInt(x,2,1e4)))return['!'+T.s.err3];const R=hl([a,b,c]),P=a*b*c,Q=R.h*R.l;
+ return[chip(a,R.F[0]),chip(b,R.F[1]),chip(c,R.F[2]),hv(T,R),lv(T,R),
+ `${M(`${a} × ${b} × ${c} = ${P}`)}<br>${M(`HCF × LCM = ${R.h} × ${R.l} = ${Q}`)}<br>${P!=Q?T.s.prodNot:T.s.prodEq}`,res(T,R)]},
+([b])=>{if(!okInt(b,2,1e6))return['!'+T.s.err2];const f=factor(b),ks=Object.keys(f),h2=!!f[2],h5=!!f[5];
+ const sy=ks.map(p=>p+'<sup>'+(f[p]==1?'':f[p])+'n</sup>').join(' × ');
+ return[T.s.zeroIdea,M(`${b}<sup>n</sup> = (${fmt(f)})<sup>n</sup> = ${sy}`),`${T.s.onlyP} ${M(ks.join(', '))}`,T.s.uniq,'§'+(h2&&h5?T.s.can(b):T.s.never(b,h5?2:5))]},
+([p])=>{if(!isPrime(p))return['!'+T.s.prErr];return[...T.s.irr(p),'§'+T.s.irrRes(p)]},
+([a,b,c])=>{if(!isPrime(c)||!b||!Number.isInteger(a)||!Number.isInteger(b))return['!'+T.s.eErr];
+ const ab=Math.abs(b),E=(a?a+(b<0?' − ':' + '):(b<0?'−':''))+(ab==1?'':ab)+'√'+c;
+ const ra=a?`r ${a<0?'+':'−'} ${Math.abs(a)}`:'r',bt=(b==1?'':b==-1?'−':b)+'√'+c,bd=b<0?`(${b})`:b;
+ return[T.s.e1(E),T.s.e2(bt,ra,c,bd),T.s.e3(ra,bd,c),T.s.e4(E,c),'§'+T.s.eRes(E)]},
+([x,y])=>{if(![x,y].every(v=>okInt(v,2,1e4)))return['!'+T.s.err3];const R=hl([x,y]);
+ return[T.s.m1,chip(x,R.F[0]),chip(y,R.F[1]),lv(T,R),'§'+T.s.meet(M(R.l))]}
+];
+const POSTERS=T.p.map((p,i)=>({...p,inputs:IN[i],build:BD[i]}));
+const N=POSTERS.length;let cur=0,tok=0;
+const nav=$('#nav'),main=$('#main');
+POSTERS.forEach((P,i)=>{
+ const b=document.createElement('button');b.textContent=P.name;b.onclick=()=>show(i);nav.appendChild(b);
+ const s=document.createElement('section');s.className='poster';
+ s.innerHTML=`<div><h1>${P.title}</h1><div class="tag">${P.tag}</div><ul class="facts">${P.facts.map(f=>`<li>${f}</li>`).join('')}</ul></div>
+ <div><div class="ctl">${P.inputs.map(([n,v])=>`<label>${n}<input type="number" value="${v}"></label>`).join('')}
+ <button class="go">${T.run}</button><button class="st">${T.step}</button><button class="rs">${T.reset}</button></div><div class="stage"></div></div>`;
+ main.appendChild(s);P.el=s;P.stage=$('.stage',s);
+ $('.go',s).onclick=()=>play();$('.st',s).onclick=()=>step();$('.rs',s).onclick=()=>{tok++;kids().forEach(k=>k.classList.remove('on'))};
+ s.querySelectorAll('input').forEach(inp=>inp.addEventListener('keydown',e=>{e.stopPropagation();if(e.key==='Enter')play()}));
+});
+const kids=()=>[...POSTERS[cur].stage.children];
+function build(){const P=POSTERS[cur];const v=[...P.el.querySelectorAll('input')].map(i=>+i.value);
+ P.stage.innerHTML=`<div class="key"><b>${T.keyLabel}</b> ${P.key}</div>`+P.build(v).map(h=>{const r=h[0]=='§',bad=h[0]=='!';return `<div class="${r?'result':bad?'bad':''}">${r||bad?h.slice(1):h}</div>`}).join('')}
+async function play(){build();const my=++tok;await sleep(300);for(const k of kids()){if(my!==tok)return;k.classList.add('on');await sleep(1800)}}
+function step(){tok++;let n=kids().find(k=>!k.classList.contains('on'));if(!n){build();n=kids()[0]}n.classList.add('on')}
+function show(i){tok++;cur=i;POSTERS.forEach((P,j)=>P.el.classList.toggle('on',j==i));[...nav.children].forEach((b,j)=>b.classList.toggle('on',j==i));play()}
+const RT=document.documentElement.dir=='rtl',NX=RT?'ArrowLeft':'ArrowRight',PV=RT?'ArrowRight':'ArrowLeft';
+document.addEventListener('keydown',e=>{
+ if(e.key===NX)show((cur+1)%N);else if(e.key===PV)show((cur+N-1)%N);
+ else if(e.key===' '){e.preventDefault();play()}else if(e.key==='s'||e.key==='S')step();
+ else if(e.key==='h'||e.key==='H')document.body.classList.toggle('clean')});
+show(Math.min(N-1,Math.max(0,(+location.hash.slice(1)||1)-1)));
+</script>
+</body>
+</html>
